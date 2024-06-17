@@ -36,67 +36,78 @@ export default defineConfig({
     {
       name: 'iphone 14 pro max',
       use: { ...devices["iPhone 14 Pro Max"] },
+      testMatch: /.mobile/
     },
 
     {
       name: 'iPad 11 pro',
       use: { ...devices["iPad Pro 11"] },
+      testMatch: /.Ipad/
+      
     },
     {
       name: 'Samsung tab 4',
       use: { ...devices["Galaxy Tab S4"] },
+      testMatch: /.mobile/
     },
 
     {
       name: 'Samsung s9+',
       use: { ...devices["Galaxy S9+"] },
+      testMatch: /.mobile/
     },
 
 
     {
       name: 'Desktop Chrome',
       use: { ...devices['Desktop Chrome'] },
+      testMatch: /.desktop/
     },
     {
       name: 'Desktop Firefox',
       use: { ...devices['Desktop Firefox'] },
+      testMatch: /.desktop/
     },
     {
       name: 'Desktop Safari',
       use: { ...devices['Desktop Safari'] },
+      testMatch: /.desktop/
     },
     {
       name: 'Mobile Chrome',
       use: { ...devices['Pixel 5'] },
+      testMatch: /.mobile/
     },
     {
       name: 'Mobile Safari',
       use: { ...devices['iPhone 12'] },
+      testMatch: /.mobile/
     },
     {
       name: 'Microsoft Edge',
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
+      testMatch: /.desktop/
     },
     {
       name: 'Google Chrome',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      testMatch: /.desktop/
     },
 
-
-    {
-      name: 'staging',
-      use: {
-        baseURL: 'staging.example.com',
-      },
-      retries: 2,
-    },
-    {
-      name: 'production',
-      use: {
-        baseURL: 'production.example.com',
-      },
-      retries: 0,
-    },
+    // {
+    //   name: 'staging',
+    //   use: {
+    //     baseURL: 'staging.example.com',
+    //   },
+    //   retries: 2,
+    // },
+    // {
+    //   name: 'production',
+    //   use: {
+    //     baseURL: 'production.example.com',
+    //   },
+    //   retries: 0,
+    // },
   ],
 
   /* Run your local dev server before starting the tests */
