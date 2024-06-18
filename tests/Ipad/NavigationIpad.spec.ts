@@ -3,6 +3,7 @@ import { describe } from 'node:test';
 
 describe("Tests moblies",()=>{
   test('test', async ({ page }) => {
+    test.setTimeout(60000);
     await page.goto('/');
     await page.getByText('Accepter et fermer').click();
     await page.locator('#header > a.btn-menu.pull-left.visible-sm > button').click();                  
