@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git credentialsId: 'testjenkins', url: 'https://github.com/DjamelYousfi25/Jet_tours.git', branch: 'main'
+                    git credentialsId: 'gittocken', url: 'https://github.com/Hmimi97/jet_tours_oky.git', branch: 'main'
                 }
             }
         }
@@ -14,8 +14,6 @@ pipeline {
                 script {
                     bat 'npm install'
                     bat 'npm install playwright@latest'
-                    bat 'npx playwright install msedge'
-
                 }
             }
         }
@@ -26,18 +24,17 @@ pipeline {
                 }
             }
         }
-  
     }
-     post {
+    post {
         always {
-            publishHTML([[
+            publishHTML([
                 reportName: 'Playwright Test Report',
-                reportDir: 'playwright-report',
+                reportDir: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\jettoursplaywright\\playwright-report\\',
                 reportFiles: 'index.html',
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
                 allowMissing: false
-            ]])
+            ])
         }
     }
 }
