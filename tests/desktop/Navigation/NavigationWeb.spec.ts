@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { TestContext, describe } from 'node:test';
-test.describe.configure({ mode: 'serial' });
+
 describe('Navigation to site',()=>{
 
   test('Navigation 1', async ({ page }) => {

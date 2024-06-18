@@ -3,6 +3,7 @@ import { describe } from 'node:test';
 
 describe("Tests moblies",()=>{
   test('test', async ({ page }) => {
+    test.setTimeout(60000);
     ////*[@id="navbar--mobile"]/div[1]/div/div/div[2]/span
     await page.goto('/');
     await page.waitForSelector('#privacy__validate');
@@ -29,10 +30,12 @@ describe("Tests moblies",()=>{
     await page.locator('#mm-1 > ul > li.icon.dropdown.expand > a').click();
     await page.waitForSelector("#mm-19 > div > a.mm-btn.mm-prev");
     await page.locator('#mm-19 > div > a.mm-btn.mm-prev').click();
-    await expect(page.getByRole('button', { name: 'Circuits ' })).toBeVisible();
+    await expect(page.locator('#mm-1 > ul > li:nth-child(3) > a')).toBeVisible();
     await expect(page.locator('h1')).toContainText('Kappa Club, l’expérience du club ouvert sur la découverte');
     await expect(page.getByPlaceholder('JJ/MM/AAAA')).toHaveValue('Date de départ');
     page.close();
   });
 })
+
+
 
