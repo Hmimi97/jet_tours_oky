@@ -3,16 +3,20 @@ import { describe } from 'node:test';
 
 describe("Tests moblies",()=>{
   test('test', async ({ page }) => {
+    ////*[@id="navbar--mobile"]/div[1]/div/div/div[2]/span
     await page.goto('/');
-    await page.getByText('Accepter et fermer').click();
+    await page.waitForSelector('#privacy__validate');
+    await page.locator('#privacy__validate').click();
     await page.locator('#navbar--mobile > div.row__navbar-mobile.bl-brown > div > a > button').click();                  
     await page.locator('#mm-1 > ul > li:nth-child(1) > a').click();
+    await page.waitForSelector("#mm-2 > ul > li.grey_box > a");
     await page.locator('#mm-2 > ul > li.grey_box > a').click();
-    await page.getByRole('link', { name: 'Tunisie', exact: true }).click();
+    await page.waitForSelector("#mm-3 > ul > li:nth-child(1) > a");
+    await page.locator('#mm-3 > ul > li:nth-child(1) > a').click();
     await page.locator('#navbar--mobile > div.row__navbar-mobile.bl-brown > div > a > button').click();
     await page.locator('#mm-1 > ul > li:nth-child(2) > a').click();
     await page.locator('#mm-6 > ul > li:nth-child(2) > a').click();
-    await page.getByRole('link', { name: 'Andalousie' }).click();
+    await page.locator('#mm-8 > ul > li:nth-child(2) > a').click();
     await page.locator('#navbar--mobile > div.row__navbar-mobile.bl-brown > div > a > button').click();
     await page.waitForSelector("#mm-1 > ul > li:nth-child(3) > a");
     await page.locator('#mm-1 > ul > li:nth-child(3) > a').click();
